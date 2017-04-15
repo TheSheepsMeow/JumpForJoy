@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>JumpForJoy</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>2m2oqhlgof90t</unique-id>
+    <saved-with-version>23900</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Spritefont2" version="1">Sprite font</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>320</width>
+        <height>480</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Orientations">Landscape</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="Touch" sid="950885487498658">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type name="GradientBG" sid="196268375873388">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\david\Downloads\SheepsMeowInternship\Prototypes\Asset 1.png" />
+        </object-type>
+        <object-type name="player" sid="711785802184619">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="MaxY" sid="731989908944599" type="number" />
+                <instance-variable name="CurMaxY" sid="560763759949763" type="number" />
+                <instance-variable name="MinJumpStrength" sid="136040445759409" type="number" />
+                <instance-variable name="MaxJumpStrength" sid="213696007814863" type="number" />
+                <instance-variable name="Combojump" sid="778417885181625" type="boolean" />
+                <instance-variable name="dist" sid="672212980515213" type="number" />
+                <instance-variable name="isPlaying" sid="579794651735488" type="boolean" />
+                <instance-variable name="winner" sid="992672783058603" type="boolean" />
+                <instance-variable name="Intro" sid="226362017053167" type="boolean" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Platform" sid="765257363193746">
+                    <behavior id="Platform" />
+                </behavior-type>
+                <behavior-type name="ScrollTo" sid="956332021225408">
+                    <behavior id="scrollto" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="800631404996901" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="playerJumpCol" sid="927250234855932">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="JumpWindow" sid="575432625317025" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Pin" sid="368932705445208">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="298503362016573" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="platform" sid="603148605270797">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Jumpthru" sid="841265985883862">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="631921871580984" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.208" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0.503999" />
+                            <point x="0.204" y="0.503999" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="PlayerY" sid="949069431783999">
+            <plugin id="Spritefont2" />
+            <texture />
+        </object-type>
+        <object-type name="playerMaxY" sid="129643543124654">
+            <plugin id="Spritefont2" />
+            <texture />
+        </object-type>
+        <object-type name="camera" sid="183039404331313">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="distFromPlayer" sid="635293924837787" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="ScrollTo" sid="476747417539046">
+                    <behavior id="scrollto" />
+                </behavior-type>
+                <behavior-type name="Pin" sid="269688677348629">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="197345139947159" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Audio" sid="882551477859759">
+            <plugin id="Audio" />
+        </object-type>
+        <object-type name="TotalDistance" sid="464560123089400">
+            <plugin id="Spritefont2" />
+            <texture />
+        </object-type>
+        <object-type name="EndGameFade" sid="237151263059732">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="574756648673644" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="GOText" sid="491844926540337">
+            <plugin id="Spritefont2" />
+            <texture />
+        </object-type>
+        <object-type name="cloud" sid="486649221972089">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="984320183282187">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="902267506019007" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TapToJump" sid="435507781429683">
+            <plugin id="Spritefont2" />
+            <texture />
+        </object-type>
+        <object-type name="Congrats" sid="196655761954705">
+            <plugin id="Spritefont2" />
+            <texture />
+        </object-type>
+        <object-type name="playButton" sid="612703533386364">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="772456762630272" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\david\Downloads\SheepsMeowInternship\Prototypes\PlayAgaintemp.png">
+                        <collision-poly>
+                            <point x="0.0544554" y="0.150538" />
+                            <point x="0.509901" y="0.0752688" />
+                            <point x="0.970297" y="0.139785" />
+                            <point x="0.995049" y="0.548387" />
+                            <point x="0.960396" y="0.935484" />
+                            <point x="0.509901" y="0.989247" />
+                            <point x="0.0594059" y="0.935484" />
+                            <point x="0.0346535" y="0.548387" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Pressed" pingpong="0" repeatcount="1" repeatto="0" sid="229244907776290" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="JoySpeechBox" sid="439928045800294">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="firstmilestone" sid="584314625276596" type="boolean" />
+                <instance-variable name="secondmilestone" sid="710450953982788" type="boolean" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Fade" sid="391450465139164">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="746059547116404" speed="5">
+                    <frame duration="1" hotspotX="0.47479" hotspotY="0.424658" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="JoyDialogue1" sid="107289369192255">
+            <plugin id="Spritefont2" />
+            <behaviors>
+                <behavior-type name="Pin" sid="571449226105392">
+                    <behavior id="Pin" />
+                </behavior-type>
+                <behavior-type name="Fade" sid="360384180159002">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="JoyDialogue2" sid="694237974339847">
+            <plugin id="Spritefont2" />
+            <behaviors>
+                <behavior-type name="Pin" sid="678233653392677">
+                    <behavior id="Pin" />
+                </behavior-type>
+                <behavior-type name="Fade" sid="763845204522231">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="PlayerSpeechBox" sid="191895324468500">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="601562606462820" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="JoyExclamation" sid="536636340417582">
+            <plugin id="Spritefont2" />
+            <texture />
+        </object-type>
+        <object-type name="mute" sid="281796090203384">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="anim" sid="762318083427116" type="string" />
+                <instance-variable name="toggleAnim" sid="433197356937321" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="663989810058799" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\david\Downloads\SheepsMeowInternship\Prototypes\volumetemp.png" />
+                </animation>
+                <animation framecount="1" loop="0" name="Muted" pingpong="0" repeatcount="1" repeatto="0" sid="865191072311221" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TitleFade" sid="216094323851983">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="293899386157585">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="258136930119154" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Title" sid="354625348243837">
+            <plugin id="Spritefont2" />
+            <behaviors>
+                <behavior-type name="Fade" sid="606276631073338">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+    </object-folder>
+    <families>
+        <family name="Platforms" plugin-id="Sprite" sid="732727724600780">
+            <members>
+                <member>platform</member>
+            </members>
+            <behaviors>
+                <behavior-type name="Bullet" sid="119125286819511">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+        </family>
+    </families>
+    <layout-folder>
+        <layout>Layout 1.xml</layout>
+        <layout>Title.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>EventTitle.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Touch" uid="0">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="Audio" uid="8">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+    </global-instances>
+    <sounds-folder>
+        <file name="Jump 6.m4a" />
+        <file name="Jump 6.ogg" />
+    </sounds-folder>
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>
